@@ -13,7 +13,6 @@ objeto y no será visible.
 usa el color blanco por defecto. Los colores disponibles para los electrodomésticos son 
 blanco, negro, rojo, azul y gris. No importa si el nombre está en mayúsculas o en 
 minúsculas. Este método se invocará al crear el objeto y no será visible.
-13
 • Metodo crearElectrodomestico(): le pide la información al usuario y llena el 
 electrodoméstico, también llama los métodos para comprobar el color y el consumo. Al 
 precio se le da un valor base de $1000.
@@ -27,15 +26,16 @@ package entidades;
  * @author Usuario
  */
 public class Electrodomestico {
+
     protected double precio;
     protected String color;
     protected String consumoEnergetico;
-    protected double peso;
+    protected int peso;
 
     public Electrodomestico() {
     }
 
-    public Electrodomestico(double precio, String color, String consumoEnergetico, double peso) {
+    public Electrodomestico(double precio, String color, String consumoEnergetico, int peso) {
         this.precio = precio;
         this.color = comprobarColor(color);
         this.consumoEnergetico = comprobarConsumoEnergetico(consumoEnergetico);
@@ -66,37 +66,44 @@ public class Electrodomestico {
         this.consumoEnergetico = consumoEnergetico;
     }
 
-    public double getPeso() {
+    public int getPeso() {
         return peso;
     }
 
-    public void setPeso(double peso) {
+    public void setPeso(int peso) {
         this.peso = peso;
     }
-    
-    private String comprobarConsumoEnergetico(String letra){
-        String[] aux = {"A", "B", "C", "D","E","F"};
-        String miString="F";
+
+    private String comprobarConsumoEnergetico(String letra) {
+        String[] aux = {"A", "B", "C", "D", "E", "F"};
+        String miString = "F";
         for (String s : aux) {
-            if(s.equalsIgnoreCase(letra)){
-                 miString= letra;
-                 break;
-    
+            if (s.equalsIgnoreCase(letra)) {
+                miString = s;
+                break;
+
             }
         }
         return miString;
     }
-    
-        private String comprobarColor(String color){
-        String[] aux = {"Blanco", "Negro", "Rojo", "Azul","Gris"};
-        String miString="Blanco";
+
+    private String comprobarColor(String color) {
+        String[] aux = {"Blanco", "Negro", "Rojo", "Azul", "Gris"};
+        String miString = "Blanco";
         for (String s : aux) {
-            if(s.equalsIgnoreCase(color)){
-                 miString= color;
-                 break;
-    
+            if (s.equalsIgnoreCase(color)) {
+                miString = s;
+                break;
+
             }
         }
         return miString;
     }
+
+    @Override
+    public String toString() {
+        return "precio= " + precio + ", color= " + color + ", consumoEnergetico= " + consumoEnergetico + ", peso= " + peso;
+    }
+    
+
 }

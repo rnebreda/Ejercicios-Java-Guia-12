@@ -22,6 +22,13 @@ precio. Esta es la lista de precios:
  */
 package g12.ejercicio2;
 
+//import entidades.Electrodomestico;
+import entidades.Lavadora;
+import entidades.Televisor;
+//import servicios.ServicioElectro;
+import servicios.ServicioLavadora;
+import servicios.ServicioTelevisor;
+
 /**
  *
  * @author Usuario
@@ -32,7 +39,15 @@ public class G12Ejercicio2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        ServicioLavadora sl= new ServicioLavadora();
+        Lavadora l= sl.crearLavadora();
+        sl.precioFinal(l);
+        System.out.println(l.toString());
+        ServicioTelevisor st= new ServicioTelevisor();
+        Televisor t= st.crearTelevisor();
+        st.precioFinal(t);
+        System.out.println(t.toString());
+        
     }
     
 }
