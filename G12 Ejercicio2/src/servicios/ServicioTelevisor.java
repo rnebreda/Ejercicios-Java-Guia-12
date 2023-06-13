@@ -23,32 +23,32 @@ public class ServicioTelevisor extends ServicioElectro {
         Electrodomestico e = super.crearElectrodomestico();
         System.out.println("Ingrese la resolucion");
         int resolucion = leer.nextInt();
-        System.out.println("Tiene Sintonizador TDT? (S=si)");
+        System.out.println("Tiene Sintonizador TDT? (S=si) ");
         boolean tdt = leer.next().equalsIgnoreCase("S");
         Televisor t = new Televisor(resolucion, tdt, e.getPrecio(), e.getColor(), e.getConsumoEnergetico(), e.getPeso());
 
         return t;
     }
-    
-        public void precioFinal (Televisor t){
+
+    public void precioFinal(Televisor t) {
         super.precioFinal(t);
-        System.out.println("parcial: "+  t.getPrecio());
-        t.setPrecio(t.getPrecio()+difPrecioResolucion(t)+difPrecioTdt(t));
+        System.out.println("parcial: " + t.getPrecio());
+        t.setPrecio(t.getPrecio() + difPrecioResolucion(t) + difPrecioTdt(t));
     }
 
     private double difPrecioResolucion(Televisor t) {
         double difPrecio = 0;
-        if (t.getResolucion()>40) {
-            difPrecio=t.getPrecio()*0.3;
+        if (t.getResolucion() > 40) {
+            difPrecio = t.getPrecio() * 0.3;
         }
 
         return difPrecio;
     }
-    
-        private double difPrecioTdt(Televisor t) {
+
+    private double difPrecioTdt(Televisor t) {
         double difPrecio = 0;
         if (t.isTdt()) {
-            difPrecio=500;
+            difPrecio = 500;
         }
 
         return difPrecio;
