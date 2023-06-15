@@ -9,16 +9,16 @@ package entidades;
  */
 public class Barco {
     protected int matricula;
-    protected double eslora;
-    protected int anio;
-
-    public Barco(int matricula, double eslora, int anio) {
-        this.matricula = matricula;
-        this.eslora = eslora;
-        this.anio = anio;
-    }
+    protected int eslora;
+    protected int anioFabricacion;
 
     public Barco() {
+    }
+
+    public Barco(int matricula, int eslora, int anioFabricacion) {
+        this.matricula = matricula;
+        this.eslora = eslora;
+        this.anioFabricacion = anioFabricacion;
     }
 
     public int getMatricula() {
@@ -29,20 +29,25 @@ public class Barco {
         this.matricula = matricula;
     }
 
-    public double getEslora() {
+    public int getEslora() {
         return eslora;
     }
 
-    public void setEslora(double eslora) {
+    public void setEslora(int eslora) {
         this.eslora = eslora;
     }
 
-    public int getAnio() {
-        return anio;
+    public int getAnioFabricacion() {
+        return anioFabricacion;
     }
 
-    public void setAnio(int anio) {
-        this.anio = anio;
+    public void setAnioFabricacion(int anioFabricacion) {
+        this.anioFabricacion = anioFabricacion;
+    }
+
+    @Override
+    public String toString() {
+        return "Barco ==> " + "matricula= " + matricula + ", eslora= " + eslora + "mts , año de fabricación= " + anioFabricacion+ " //";
     }
     
     

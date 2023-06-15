@@ -19,8 +19,8 @@ public class G12Ejercicio4 {
 
 
 
-     Circulo circulo = new Circulo(2.5);
-     Rectangulo rectangulo = new Rectangulo(4.5,3.5);
+     Circulo circulo = new Circulo(3);
+     Rectangulo rectangulo = new Rectangulo(4,2);
         System.out.println("El area del circulo es: "+circulo.calcularArea());
         System.out.println("El perimetro del circulo es: "+circulo.calcularPerimetro());
         System.out.println("");

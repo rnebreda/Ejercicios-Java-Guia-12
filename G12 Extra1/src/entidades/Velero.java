@@ -9,26 +9,34 @@ package entidades;
  *
  * @author Usuario
  */
-public class Velero extends Barco{
-    private int nroMastiles;
-
-    public Velero(int nroMastiles, int matricula, double eslora, int anio) {
-        super(matricula, eslora, anio);
-        this.nroMastiles = nroMastiles;
-    }
+public final class Velero extends Barco{
+   private int mastiles;
 
     public Velero() {
     }
 
-    public int getNroMastiles() {
-        return nroMastiles;
+    public Velero(int mastiles) {
+        this.mastiles = mastiles;
     }
 
-    public void setNroMastiles(int nroMastiles) {
-        this.nroMastiles = nroMastiles;
+    public Velero(int mastiles, int matricula, int eslora, int anioFabricacion) {
+        super(matricula, eslora, anioFabricacion);
+        this.mastiles = mastiles;
     }
 
+    public int getMastiles() {
+        return mastiles;
+    }
 
+    public void setMastiles(int mastiles) {
+        this.mastiles = mastiles;
+    }
+
+    @Override
+    public String toString() {
+        return "Velero ==> " + "cantidad de mastiles =" + mastiles + " // "+"\n"+super.toString();
+    }
+    
     
     
 }

@@ -16,19 +16,18 @@ public class Circulo implements calculosFormas {
 
     @Override
     public double calcularArea() {
-        return PI*(radio*2);
+        return PI * (Math.pow(radio, 2));
     }
 
     @Override
     public double calcularPerimetro() {
-    return PI*(Math.pow(radio,2));
+        return PI * (radio * 2);
     }
 
     public Circulo(double radio) {
         this.radio = radio;
     }
 
-    
     public double getRadio() {
         return radio;
     }

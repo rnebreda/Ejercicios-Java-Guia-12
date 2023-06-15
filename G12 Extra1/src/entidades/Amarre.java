@@ -12,23 +12,27 @@ import java.util.Date;
  * @author Usuario
  */
 public class Amarre {
-    private String nombre;
-    private int documento;
-    private Date fechaAlquiler;
-    private Date fechaDevolucion;
-    private int posicionAmarre;
-    private Barco barco;
+    /*
+    el nombre, documento del cliente, la fecha de alquiler, fecha de devolución, la posición del
+amarre y el barco que lo ocupará.
+    */
+    String nombre;
+    int dni;
+    Date fechaDeAlquiler;
+    Date fechaDevolucion;
+    int posicionAmarre;
+    Barco barco;
 
-    public Amarre(String nombre, int documento, Date fechaAlquiler, Date fechaDevolucion, int posicionAmarre, Barco barco) {
+    public Amarre() {
+    }
+
+    public Amarre(String nombre, int dni, Date fechaDeAlquiler, Date fechaDevolucion, int posicionAmarre, Barco barco) {
         this.nombre = nombre;
-        this.documento = documento;
-        this.fechaAlquiler = fechaAlquiler;
+        this.dni = dni;
+        this.fechaDeAlquiler = fechaDeAlquiler;
         this.fechaDevolucion = fechaDevolucion;
         this.posicionAmarre = posicionAmarre;
         this.barco = barco;
-    }
-
-    public Amarre() {
     }
 
     public String getNombre() {
@@ -39,20 +43,20 @@ public class Amarre {
         this.nombre = nombre;
     }
 
-    public int getDocumento() {
-        return documento;
+    public int getDni() {
+        return dni;
     }
 
-    public void setDocumento(int documento) {
-        this.documento = documento;
+    public void setDni(int dni) {
+        this.dni = dni;
     }
 
-    public Date getFechaAlquiler() {
-        return fechaAlquiler;
+    public Date getFechaDeAlquiler() {
+        return fechaDeAlquiler;
     }
 
-    public void setFechaAlquiler(Date fechaAlquiler) {
-        this.fechaAlquiler = fechaAlquiler;
+    public void setFechaDeAlquiler(Date fechaDeAlquiler) {
+        this.fechaDeAlquiler = fechaDeAlquiler;
     }
 
     public Date getFechaDevolucion() {
@@ -78,6 +82,7 @@ public class Amarre {
     public void setBarco(Barco barco) {
         this.barco = barco;
     }
+    
     
     
 }
