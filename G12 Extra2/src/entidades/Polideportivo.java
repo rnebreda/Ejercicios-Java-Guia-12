@@ -68,12 +68,14 @@ public final class Polideportivo extends Edificio {
     @Override
     public void calcularSuperficie() {
         double sup = ancho * largo;
+        sup= decimales(sup,2);
         System.out.println("La superficie del Polideportivo es "+sup+ " m2");
     }
 
     @Override
     public void calcularVolumen() {
         double vol = ancho * alto * largo;
+        vol= decimales(vol,2);
         System.out.println("El volumen del Polideportivo es "+vol+" m3");    
     }
     

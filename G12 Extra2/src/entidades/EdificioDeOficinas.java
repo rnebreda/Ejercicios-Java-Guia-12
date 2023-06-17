@@ -15,8 +15,8 @@ public class EdificioDeOficinas extends Edificio {
 
     public EdificioDeOficinas(int numOficinas, int cantPersonas, int numPisos, double ancho, double alto, double largo) {
         super(ancho, alto, largo);
-        this.numOficinas = numOficinas;
-        this.cantPersonas = cantPersonas;
+        this.numOficinas = numOficinas;//total de oficinas = total de pisos (una oficina por piso)
+        this.cantPersonas = cantPersonas;//cantidad de personas por oficina
         this.numPisos = numPisos;
     }
 
@@ -71,11 +71,13 @@ public class EdificioDeOficinas extends Edificio {
     @Override
     public void calcularSuperficie() {
         double sup = ancho * largo * numPisos;
+        sup = decimales(sup,2);
         System.out.println("La superficie del Edificio de oficinas es "+sup+ " m2");
     }
 
     @Override
     public void calcularVolumen() {
         double vol = ancho * alto * largo;
+        vol= decimales(vol,2);
         System.out.println("El volumen del Edificio de oficinas es "+vol+" m3");      }
 }

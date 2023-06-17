@@ -26,4 +26,9 @@ public abstract class Edificio {
     public abstract void calcularSuperficie();
         
     public abstract void calcularVolumen();
+    
+    public double decimales (double d, int i){
+        int Aux = (int)(d*Math.pow(10, i));
+        return (Aux/Math.pow(10, i));
+    }
 }

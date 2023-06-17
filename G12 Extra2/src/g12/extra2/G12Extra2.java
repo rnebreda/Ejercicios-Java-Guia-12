@@ -28,6 +28,8 @@ cantPersonas() y mostrar los resultados de cada edificio de oficinas.
 package g12.extra2;
 
 import entidades.Edificio;
+import entidades.EdificioDeOficinas;
+import entidades.Polideportivo;
 import java.util.ArrayList;
 import servicios.OficinasServicio;
 import servicios.PoliServicio;
@@ -42,9 +44,36 @@ public class G12Extra2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArrayList <Edificio> e = new ArrayList();
-        PoliServicio sp = new PoliServicio();
+        ArrayList<Edificio> edificios = new ArrayList();
+        PoliServicio ps = new PoliServicio();
         OficinasServicio os = new OficinasServicio();
+        Edificio edo1 = os.crearEdOficina();
+        edificios.add(edo1);
+        Edificio edo2 = os.crearEdOficina();
+        edificios.add(edo2);
+        Edificio poli1 = ps.crearPoli();
+        edificios.add(poli1);
+        Edificio poli2 = ps.crearPoli();
+        edificios.add(poli2);
+        int sumaTechado = 0, sumaAbierto = 0;
+        for (Edificio e : edificios) {
+            e.calcularSuperficie();
+            e.calcularVolumen();
+            if (e instanceof EdificioDeOficinas) {
+                EdificioDeOficinas edo = (EdificioDeOficinas) e;
+                os.cantPersonas(edo);
+                System.out.println("");
+            } else {
+                Polideportivo poli = (Polideportivo) e;
+                if (poli.getTipo().equalsIgnoreCase("Techado")) {
+                    sumaTechado++;
+                } else {
+                    sumaAbierto++;
+                }
+            }
+        }
+        System.out.println("La cantidad de Polideportivos Techados es: "+sumaTechado);
+        System.out.println("La cantidad de Polideportivos Abiertos es: "+sumaAbierto);
     }
-    
+
 }

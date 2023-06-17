@@ -16,14 +16,14 @@ public class PoliServicio {
 
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
-    public void crearPoli() {
+    public Polideportivo crearPoli() {
         System.out.println("Ingrese el nombre del Polideportivo");
         String nombre = leer.next();
-        System.out.println("Ingrese el tipo (Techado/Abierto");
+        System.out.println("Ingrese el tipo (Techado/Abierto)");
         String tipo = leer.next();
         double ancho = (int) ((Math.random() * 40) + 10);
         double alto = (int) ((Math.random() * 7) + 3);
         double largo = (int) ((Math.random() * 40) + 10);
-        Polideportivo poli = new Polideportivo(nombre,tipo,ancho,alto,largo);
+        return new Polideportivo(nombre,tipo,ancho,alto,largo);
     }
 }
