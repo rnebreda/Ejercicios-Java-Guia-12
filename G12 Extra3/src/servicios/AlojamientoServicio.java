@@ -86,7 +86,7 @@ public class AlojamientoServicio {
     }
 
     public void listarHoteles() {
-        Set<Hotel> hoteles = new TreeSet(Hotel.mayorAMenor);
+        Set<Hotel> hoteles = new TreeSet(Hotel.menorAMayor);
         for (Alojamiento a : alojamientos) {
             if (a instanceof Hotel) {
                 Hotel aux = (Hotel) a;

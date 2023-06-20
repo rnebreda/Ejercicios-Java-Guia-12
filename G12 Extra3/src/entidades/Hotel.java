@@ -39,7 +39,7 @@ public class Hotel extends Alojamiento{
                 +"\n"+super.toString();
     }
     
-    public static Comparator<Hotel> mayorAMenor = new Comparator<Hotel>() {
+    public static Comparator<Hotel> menorAMayor = new Comparator<Hotel>() {
         @Override
         public int compare(Hotel t, Hotel t1) {
             if (t.getPrecioHabitacion()==t1.getPrecioHabitacion()) {
